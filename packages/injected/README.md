@@ -84,6 +84,9 @@ console.log(connectedWallets)
 - BifrostWallet - _Desktop & Mobile_
 - Safeheron - _Desktop_
 - Talisman - _Desktop_
+- Aurox Wallet - _Desktop_ & _Mobile_
+
+[//]: # (TODO: Add "coming soon" for mobile? ^)
 
 ## Filtering Wallets
 

@@ -1,23 +1,14 @@
-import type {
-  EIP1193Provider,
-  ChainListener,
-  SimpleEventEmitter,
-  ChainId
-} from '@web3-onboard/common'
-
-import { createEIP1193Provider } from '@web3-onboard/common'
+import type { ChainId, ChainListener, EIP1193Provider, SimpleEventEmitter } from '@web3-onboard/common';
+import { createEIP1193Provider } from '@web3-onboard/common';
 import {
-  InjectedWalletModule,
-  CustomWindow,
   BinanceProvider,
-  ProviderExternalUrl
-} from './types.js'
-
-import {
+  CustomWindow,
   InjectedNameSpace,
+  InjectedWalletModule,
+  ProviderExternalUrl,
   ProviderIdentityFlag,
   ProviderLabel
-} from './types.js'
+} from './types.js';
 
 declare const window: CustomWindow
 
@@ -800,6 +791,19 @@ const onekey: InjectedWalletModule = {
   externalUrl: ProviderExternalUrl.OneKey
 }
 
+const auroxwallet: InjectedWalletModule = {
+  label: ProviderLabel.AuroxWallet,
+  injectedNamespace: InjectedNameSpace.AuroxWallet,
+  checkProviderIdentity: ({ provider }) =>
+    !!provider && !!provider[ProviderIdentityFlag.AuroxWallet],
+  getIcon: async () => (await import('./icons/auroxwallet.js')).default,
+  getInterface: async () => ({
+    provider: createEIP1193Provider(window.auroxwallet)
+  }),
+  platforms: ['Chrome', 'Chromium', 'Microsoft Edge', 'Opera'],
+  externalUrl: ProviderExternalUrl.AuroxWallet
+}
+
 const wallets = [
   zeal,
   exodus,
@@ -849,7 +853,8 @@ const wallets = [
   infinitywallet,
   safeheron,
   talisman,
-  onekey
+  onekey,
+  auroxwallet
 ]
 
 export default wallets
