@@ -85,7 +85,7 @@ export enum ProviderExternalUrl {
   Talisman = 'https://www.talisman.xyz/',
   Trust = 'https://trustwallet.com/download/',
   OneKey = 'https://onekey.so/download/',
-  AuroxWallet = 'https://getaurox.com/wallet'
+  AuroxWallet = 'https://getaurox.com/wallet/?utm_source=blocknative&utm_medium=connect_dialog'
 }
 
 export enum ProviderLabel {
