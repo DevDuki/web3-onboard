@@ -64,7 +64,7 @@ export enum ProviderIdentityFlag {
   Safeheron = 'isSafeheron',
   Talisman = 'isTalisman',
   OneKey = 'isOneKey',
-  AuroxWallet = 'isAuroxWallet'
+  AuroxWallet = 'isAurox'
 }
 
 
@@ -174,7 +174,7 @@ export enum InjectedNameSpace {
   Safeheron = 'safeheron',
   Talisman = 'talismanEth',
   OneKey = '$onekey',
-  AuroxWallet = 'auroxwallet'
+  AuroxWallet = 'ethereum'
 }
 
 export interface CustomWindow extends Window {
